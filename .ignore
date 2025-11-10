@@ -1,0 +1,22 @@
+# Node
+node_modules
+npm-debug.log
+.env
+.DS_Store
+
+# Build outputs
+dist
+.next
+out
+
+# Sanity
+studio-laboratory/.sanity
+studio-laboratory/node_modules
+studio-laboratory/dist
+
+# Editor
+.vscode
+.idea
+
+# Logs
+*.log

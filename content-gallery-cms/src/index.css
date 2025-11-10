@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Carregamento da fonte Quicksand */
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 100 900; /* intervalo de pesos suportados */
+  font-display: swap; /* Importante para performance */
+  src: url("/fonts/quicksand/Quicksand-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+/* Carregamento da fonte Inter */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900; /* intervalo de pesos suportados */
+  font-display: swap; /* Importante para performance */
+  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+
+/* ESTENDENDO O TEMA PARA INCLUIR A FONTE QUICKSAND */
+@theme {
+  /* Isso cria a classe Tailwind 'font-quicksand' */
+  --font-quicksand: "Quicksand", system-ui, sans-serif;
+}
+
+/* ESTENDENDO O TEMA PARA INCLUIR A FONTE INTER */
+@theme {
+  /* Isso cria a classe Tailwind 'font-quicksand' */
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
+
+@layer components {
+  /* Dropdown Animation (fade + slide) */
+  .dropdown-enter {
+    @apply opacity-0 translate-y-20;
+  }
+  .dropdown-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-200 ease-out;
+  }
+  .dropdown-exit {
+    @apply opacity-100 translate-y-0;
+  }
+  .dropdown-exit-active {
+    @apply opacity-0 translate-y-20 transition-all duration-200 ease-in;
+  }
+}
