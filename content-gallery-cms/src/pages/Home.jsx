@@ -15,6 +15,22 @@ import {
 const Home = () => {
   const [images, setImages] = useState([]);
 
+  /**Effect que busca os dados do sanity.
+   * A cadeia são métodos nativos do sanity client.
+   * fetch é o método que busca os dados.
+   * O parâmetro é uma query na linguagem GROQ, que seleciona todos os documentos
+   * do tipo "homePageCarouselImage" e retorna os campos imageUrl e description.
+   * O then recebe os dados retornados pela fetch e atualiza o estado images com esses dados.
+   *
+   * EXPLICANDO A GROQ:
+   * *[_type == "homePageCarouselImage"]  -> Seleciona todos os documentos onde o
+   * campo _type é igual a "homePageCarouselImage". Esse é o schema criado em
+   * studio-laboratory/schemaTypes/homePageCarouselImage.js
+   *
+   * { imageUrl, description } -> O Sanity retorna um monte de informações. os atributos nas
+   * chaves configura para que retorne apenas os campos imageUrl e description, que
+   * são os campos criados no schema
+   */
   useEffect(() => {
     client
       .fetch(`*[_type == "homePageCarouselImage"]{ imageUrl, description }`)
@@ -135,7 +151,7 @@ const Home = () => {
       </section>
       <section className="w-full flex gap-4 mb-20">
         <div className="w-6/10">
-          <h2 className="text-2xl text-rose-500 font-extrabold mb-4">
+          <h2 className="text-3xl text-rose-500 font-extrabold mb-4">
             Fale conosco
           </h2>
           <p className="text-xl text-white mb-10">

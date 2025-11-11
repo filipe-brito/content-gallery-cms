@@ -26,7 +26,7 @@ export const Carousel = ({ images }) => {
               alt={`Slide ${i + 1}`}
               className="w-full h-[60vh] object-contain"
             />
-            <div className="flex text-white text-xl mt-4 px-20">
+            <div className="flex font-inter text-white text-xl mt-4 px-20">
               <PortableText value={src.description} />
             </div>
           </div>
