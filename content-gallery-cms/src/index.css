@@ -13,10 +13,20 @@
 /* Carregamento da fonte Inter */
 @font-face {
   font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900; /* intervalo de pesos suportados */
+  font-display: swap; /* Importante para performance */
+  src: url("/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+}
+
+/* Carregamento da fonte Inter */
+@font-face {
+  font-family: "Inter";
   font-style: normal;
   font-weight: 100 900; /* intervalo de pesos suportados */
   font-display: swap; /* Importante para performance */
-  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
 }
 
 /* ESTENDENDO O TEMA PARA INCLUIR A FONTE QUICKSAND */

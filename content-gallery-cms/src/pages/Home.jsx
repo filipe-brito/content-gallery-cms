@@ -50,7 +50,7 @@ const Home = () => {
           alt="logo principal"
           className="w-8/10"
         />
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 py-4 rounded-2xl bg-white/30">
           <h1 className="text-4xl font-extrabold">
             Seja um colaborador{" "}
             <span className="text-rose-500">Amigo do Recanto</span>
@@ -70,7 +70,7 @@ const Home = () => {
                 target="_blank"
               >
                 <button>
-                  <FacebookIcon className="text-white size-10 transition duration-300 hover:scale-120 cursor-pointer" />
+                  <FacebookIcon className="text-rose-600 size-10 transition duration-300 hover:scale-120 cursor-pointer" />
                 </button>
               </a>
             </li>
@@ -80,7 +80,7 @@ const Home = () => {
                 target="_blank"
               >
                 <button>
-                  <InstagramIcon className="text-white size-10 transition duration-300 hover:scale-120 cursor-pointer" />
+                  <InstagramIcon className="text-rose-600 size-10 transition duration-300 hover:scale-120 cursor-pointer" />
                 </button>
               </a>
             </li>
@@ -90,7 +90,7 @@ const Home = () => {
                 target="_blank"
               >
                 <button>
-                  <YouTubeIcon className="text-white size-10 transition duration-300 hover:scale-120 cursor-pointer" />
+                  <YouTubeIcon className="text-rose-600 size-10 transition duration-300 hover:scale-120 cursor-pointer" />
                 </button>
               </a>
             </li>
@@ -100,7 +100,7 @@ const Home = () => {
                 target="_blank"
               >
                 <button>
-                  <LinkedInIcon className="text-white size-11 transition duration-300 hover:scale-120 cursor-pointer" />
+                  <LinkedInIcon className="text-rose-600 size-11 transition duration-300 hover:scale-120 cursor-pointer" />
                 </button>
               </a>
             </li>
@@ -113,7 +113,7 @@ const Home = () => {
         </h2>
         <Carousel images={images} />
       </section>
-      <section className="w-full flex flex-col items-center mb-20 gap-4">
+      <section className="w-full flex flex-col items-center mb-20 gap-4 py-4 rounded-2xl bg-white/30">
         <h2 className="text-4xl text-white text-center font-extrabold">
           Faça como a Paloma Bernardi:{" "}
           <span className="text-rose-500 font-extrabold">
@@ -131,7 +131,7 @@ const Home = () => {
           allowFullScreen
         ></iframe>
       </section>
-      <section className="w-full flex flex-col items-center gap-8 mb-20">
+      <section className="w-full flex flex-col items-center gap-8 mb-20 py-4 rounded-2xl bg-white/30">
         <h2 className="w-full text-center text-4xl text-white font-extrabold">
           Venha ser amigo do <span className="text-rose-500">Recanto!</span>
           <br></br>
@@ -150,7 +150,7 @@ const Home = () => {
         </a>
       </section>
       <section className="w-full flex gap-4 mb-20">
-        <div className="w-6/10">
+        <div className="w-6/10 p-4 rounded-2xl bg-white/30">
           <h2 className="text-3xl text-rose-500 font-extrabold mb-4">
             Fale conosco
           </h2>

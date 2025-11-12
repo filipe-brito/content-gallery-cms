@@ -15,6 +15,44 @@ export const Carousel = ({ images }) => {
     [emblaApi]
   );
 
+  const portableTextComponents = {
+    block: {
+      h1: ({ children }) => (
+        <h1 className="text-4xl font-bold mt-6 mb-4">{children}</h1>
+      ),
+      h2: ({ children }) => (
+        <h2 className="text-3xl font-semibold mt-5 mb-3">{children}</h2>
+      ),
+      h3: ({ children }) => (
+        <h3 className="text-2xl font-medium mt-4 mb-2">{children}</h3>
+      ),
+    },
+
+    list: {
+      bullet: ({ children }) => <ul className="list-disc ml-6">{children}</ul>,
+      number: ({ children }) => (
+        <ol className="list-decimal ml-6">{children}</ol>
+      ),
+    },
+
+    listItem: {
+      bullet: ({ children }) => <li className="mb-1">{children}</li>,
+      number: ({ children }) => <li className="mb-1">{children}</li>,
+    },
+
+    marks: {
+      link: ({ value, children }) => (
+        <a
+          href={value?.href}
+          target="_blank"
+          className="text-rose-500 underline"
+        >
+          {children}
+        </a>
+      ),
+    },
+  };
+
   return (
     <div className="relative w-full overflow-hidden" ref={emblaRef}>
       {/* Faixa deslizante */}
@@ -26,8 +64,11 @@ export const Carousel = ({ images }) => {
               alt={`Slide ${i + 1}`}
               className="w-full h-[60vh] object-contain"
             />
-            <div className="flex font-inter text-white text-xl mt-4 px-20">
-              <PortableText value={src.description} />
+            <div className="font-inter text-white text-xl mt-4 px-20">
+              <PortableText
+                value={src.description}
+                components={portableTextComponents}
+              />
             </div>
           </div>
         ))}
