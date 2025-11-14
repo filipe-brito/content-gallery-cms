@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <div className="font-quicksand min-h-screen min-w-screen">
       <Header />
-      <main className="pt-[10dvh] min-h-screen min-w-screen flex justify-center bg-blue-500">
+      <main className="min-h-screen min-w-screen flex justify-center bg-blue-500">
         <Outlet />
       </main>
       <Footer />

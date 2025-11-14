@@ -15,6 +15,19 @@ export const Carousel = ({ images }) => {
     [emblaApi]
   );
 
+  /**
+   * Há estilos feitos no editor de texto no painel do Sanity Studio que
+   * não são interpretados automaticamente no React. Para isso, é necessário
+   * definir como cada um desses estilos será renderizado.
+   * Criamos o objeto portableTextComponents para mapear esses estilos e passamos
+   * ele como propriedade para o componente PortableText.
+   *
+   * EXPLICANDO OS ESTILOS:
+   * block: h1, h2, h3 -> Estilos para cabeçalhos
+   * list: bullet, number -> Estilos para listas
+   * listItem: bullet, number -> Estilos para itens de listas
+   * marks: link -> Estilo para links
+   */
   const portableTextComponents = {
     block: {
       h1: ({ children }) => (

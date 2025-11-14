@@ -39,18 +39,60 @@ const Home = () => {
       });
   }, []);
 
+  useEffect(() => {
+    console.log(images);
+  }, [images]);
+
   return (
-    <div className="w-8/10">
-      <section className="w-full flex flex-col items-center mb-20 text-white">
-        <h1 className="text-4xl font-extrabold">
-          Bem-vindo ao Recanto Nossa Senhora de Lourdes!
-        </h1>
+    <div className="w-full relative flex flex-col items-center">
+      <section className="w-full flex flex-col items-center">
+        <div className="w-8/10 text-white py-10 flex flex-col">
+          <h2 className="text-4xl font-bold mb-4">
+            Associação Obras Sociais Santa Cruz - AOSSC
+          </h2>
+          <div className="flex gap-4 items-center">
+            <p className="font-semibold text-lg">
+              A Associação Obras Sociais Santa Cruz – AOSSC – Recanto Nossa
+              Senhora de Lourdes – é uma entidade beneficente de assistência
+              social, criada no dia 02 de junho de 1974 como uma configuração
+              jurídica da{" "}
+              <span className="text-rose-500 font-bold">
+                Congregação Servos da Caridade
+              </span>
+              , em São Paulo.
+              <br />
+              <br />
+              Presente em 23 países, a congregação foi fundada por{" "}
+              <span className="text-rose-500 font-bold">São Luís Guanella</span>
+              , em 1908, e, por meio de suas instituições sociais beneficentes,
+              dá continuidade à missão de seu fundador junto aos mais pobres e
+              desfavorecidos.
+            </p>
+            <img
+              src="https://aossc.org.br/wp-content/uploads/2023/09/Figura-AOSSC-Logos-Sede-e-Sublimacao-1024x569.jpg"
+              alt="Serviços da AOSSC"
+              className="w-4/10"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="w-full flex flex-col items-center text-white">
+        <div className="absolute w-8/10">
+          <img
+            src="/logo-recanto-header.png"
+            alt="logo principal"
+            className="w-8/10"
+          />
+        </div>
         <img
-          src="/logo-recanto-header.png"
-          alt="logo principal"
-          className="w-8/10"
+          src="https://aossc.org.br/wp-content/uploads/2023/09/IMG_20230202_120442-scaled.jpg"
+          alt="Imagem principal da home"
+          className="w-full border-y-2 border-rose-500 shadow-lg"
         />
-        <div className="flex flex-col items-center gap-4 py-4 rounded-2xl bg-white/30">
+      </section>
+
+      <section className="w-full flex flex-col items-center mb-20 bg-white">
+        <div className="w-8/10 flex flex-col items-center gap-4 py-4 rounded-2xl bg-white/30">
           <h1 className="text-4xl font-extrabold">
             Seja um colaborador{" "}
             <span className="text-rose-500">Amigo do Recanto</span>
@@ -69,8 +111,8 @@ const Home = () => {
                 href="https://www.facebook.com/recantonsdelourdes/"
                 target="_blank"
               >
-                <button>
-                  <FacebookIcon className="text-rose-600 size-10 transition duration-300 hover:scale-120 cursor-pointer" />
+                <button className="border-4 border-blue-900 rounded-full p-1 flex items-center justify-center transition duration-300 hover:scale-120 cursor-pointer">
+                  <FacebookIcon className="text-blue-900 size-10" />
                 </button>
               </a>
             </li>
@@ -79,8 +121,8 @@ const Home = () => {
                 href="https://www.instagram.com/recantonsdelourdes/"
                 target="_blank"
               >
-                <button>
-                  <InstagramIcon className="text-rose-600 size-10 transition duration-300 hover:scale-120 cursor-pointer" />
+                <button className="border-4 border-rose-500 rounded-full p-1 flex items-center justify-center transition duration-300 hover:scale-120 cursor-pointer">
+                  <InstagramIcon className="text-rose-500 size-10" />
                 </button>
               </a>
             </li>
@@ -89,8 +131,8 @@ const Home = () => {
                 href="https://www.youtube.com/channel/UCL8haj21ksJaIMNy5jG-k6w"
                 target="_blank"
               >
-                <button>
-                  <YouTubeIcon className="text-rose-600 size-10 transition duration-300 hover:scale-120 cursor-pointer" />
+                <button className="border-4 border-red-600 rounded-full p-1 flex items-center justify-center transition duration-300 hover:scale-120 cursor-pointer">
+                  <YouTubeIcon className="text-red-600 size-10" />
                 </button>
               </a>
             </li>
@@ -99,19 +141,26 @@ const Home = () => {
                 href="https://www.linkedin.com/company/99915154/admin/feed/posts/"
                 target="_blank"
               >
-                <button>
-                  <LinkedInIcon className="text-rose-600 size-11 transition duration-300 hover:scale-120 cursor-pointer" />
+                <button className="border-4 border-blue-700 rounded-full p-1 flex items-center justify-center transition duration-300 hover:scale-120 cursor-pointer">
+                  <LinkedInIcon className="text-blue-700 size-10" />
                 </button>
               </a>
             </li>
           </ul>
         </div>
       </section>
-      <section className="w-full mb-20">
-        <h2 className="w-full text-center text-4xl text-white font-extrabold">
-          O que dizem alguns dos nossos colaboradores
-        </h2>
-        <Carousel images={images} />
+      <section className="relative w-full mb-20 flex flex-col items-center">
+        <img
+          src="/bg-caroussel2.svg"
+          alt="moldura para o carrossel de imagens"
+          className="absolute h-full object-cover w-full"
+        />
+        <div className="w-8/10 flex flex-col items-cente">
+          <h2 className="w-full text-center text-4xl text-white font-extrabold z-20">
+            O que dizem alguns dos nossos colaboradores
+          </h2>
+          <Carousel images={images} />
+        </div>
       </section>
       <section className="w-full flex flex-col items-center mb-20 gap-4 py-4 rounded-2xl bg-white/30">
         <h2 className="text-4xl text-white text-center font-extrabold">
@@ -131,7 +180,7 @@ const Home = () => {
           allowFullScreen
         ></iframe>
       </section>
-      <section className="w-full flex flex-col items-center gap-8 mb-20 py-4 rounded-2xl bg-white/30">
+      <section className="w-8/10 flex flex-col items-center gap-8 mb-20 py-4 rounded-2xl bg-white/30">
         <h2 className="w-full text-center text-4xl text-white font-extrabold">
           Venha ser amigo do <span className="text-rose-500">Recanto!</span>
           <br></br>
@@ -149,7 +198,7 @@ const Home = () => {
           </button>
         </a>
       </section>
-      <section className="w-full flex gap-4 mb-20">
+      <section className="w-8/10 flex gap-4 mb-20">
         <div className="w-6/10 p-4 rounded-2xl bg-white/30">
           <h2 className="text-3xl text-rose-500 font-extrabold mb-4">
             Fale conosco

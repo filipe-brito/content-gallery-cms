@@ -53,7 +53,7 @@ export const Header = () => {
     },
   ];
   return (
-    <header className="h-[10dvh] top-0 w-full flex justify-center bg-white shadow-xl">
+    <header className="h-[10dvh] top-0 w-full flex justify-center bg-white border-b-3 border-rose-500 z-50">
       <div className="w-8/10 flex items-center">
         <GuanellaIcon className="w-12 h-12" />
         <nav className="flex w-full px-10 h-full items-center justify-center">
